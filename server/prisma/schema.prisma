@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Party {
+  id          String  @id @default(uuid())
+  adminId     String
+  name        String  @db.VarChar(50)
+  description String? @db.VarChar(100)
+  date        String? @db.VarChar(10) // 2002-17-31
+  time        String? @db.VarChar(8) // 11:45:15
+  location    String? @db.VarChar(100)
+  members     User[]
+  food        Item[]
+}
+
+model User {
+  id       String  @id @default(uuid())
+  username String  @unique @db.VarChar(20)
+  fullname String? @db.VarChar(30)
+  party    Party?  @relation(fields: [partyId], references: [id])
+  partyId  String?
+}
+
+model Item {
+  id       String  @id @default(uuid())
+  name     String  @db.VarChar(30)
+  quantity Int     @db.SmallInt
+  cost     Float
+  party    Party?  @relation(fields: [partyId], references: [id])
+  partyId  String?
+}
