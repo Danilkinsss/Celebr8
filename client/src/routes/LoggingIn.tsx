@@ -109,15 +109,18 @@ function Login() {
   */
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-sky-700 bg-opacity-50 min-h-screen">
       <header>
         <Header withUserInfo={false} />
       </header>
       <main className=" flex flex-col items-center justify-center h-96">
-        <div className=" shadow-lg rounded-md flex flex-col w-[40%] py-12 px-5 gap-2">
-          <Label className="font-semibold  text-4xl  py-1">Hello there👋</Label>
-          <Label className="text-xl  py-1">Please Log In here:</Label>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-2 ">
+        <div className=" bg-yellow-400 shadow-xl rounded-md flex flex-col w-[40%] p-8 py-10 gap-2">
+          <Label className="font-semibold  text-4xl">Hello there👋</Label>
+          <Label className="text-xl font-mono">Please Log In here:</Label>
+          <form
+            onSubmit={handleSubmit}
+            className="text-cyan-700  flex flex-col gap-2 "
+          >
             <Input
               type="text"
               placeholder="Your nickname"

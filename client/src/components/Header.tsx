@@ -8,12 +8,12 @@ function Header({ withUserInfo }: { withUserInfo: boolean }) {
   }
   const PAGE_BASE_URL = 'http://localhost:5173'
   return (
-    <div className="flex flex-row justify-between items-center bg-blue-50 pe-14">
-      <main className=" h-20 flex flex-row px-2 py-1 gap-2  items-center ">
+    <div className="flex flex-row justify-between items-center bg-white pe-14 border-2">
+      <main className="h-20 flex flex-row p-5 gap-2  items-center ">
         <img
           src={logo2}
           alt="Logo"
-          className="h-13 w-14 cursor-pointer"
+          className="h-11 w-12 cursor-pointer"
           onClick={() => {
             navigate('/')
           }}
