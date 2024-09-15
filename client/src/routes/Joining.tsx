@@ -91,7 +91,7 @@ function Join() {
         <UserInfo />
       </div> */}
       <main className=" flex flex-col items-center justify-center h-96 gap-5">
-        <div className=" shadow-lg rounded-md flex flex-col w-[40%] py-10 px-5 gap-4 ">
+        <div className="bg-sky-700 bg-opacity-50 shadow-lg rounded-md flex flex-col w-[40%] py-10 px-5 gap-4 ">
           <h1 className="font-semibold text-slate-800 text-4xl py-1">
             Enter the party code here:
           </h1>

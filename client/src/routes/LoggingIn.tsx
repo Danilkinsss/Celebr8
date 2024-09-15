@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom'
 import { Label } from '@/components/ui/label'
 import { userContext } from '@/lib/userContext'
 
+import image1 from '../assets/7212436 - Copy (2).jpg'
+
 function Login() {
   const [username, setUsername] = useState('')
   const [fullname, setFullname] = useState('')
@@ -107,19 +109,22 @@ function Login() {
     setText('')
   }
   */
+  function inputStyling(fullname: string) {
+    return fullname.length > 0 ? 'font-semibold' : 'font-thin'
+  }
 
   return (
     <div className="bg-sky-700 bg-opacity-50 min-h-screen">
       <header>
         <Header withUserInfo={false} />
       </header>
-      <main className=" flex flex-col items-center justify-center h-96">
-        <div className=" bg-yellow-400 shadow-xl rounded-md flex flex-col w-[40%] p-8 py-10 gap-2">
+      <main className=" flex flex-row gap-10 items-center justify-center h-96">
+        <div className=" bg-yellow-400 shadow-xl rounded-md flex flex-col w-[40%] max-w-md p-8 py-10 gap-2">
           <Label className="font-semibold  text-4xl">Hello there👋</Label>
           <Label className="text-xl font-mono">Please Log In here:</Label>
           <form
             onSubmit={handleSubmit}
-            className="text-cyan-700  flex flex-col gap-2 "
+            className=" text-cyan-700  flex flex-col gap-2 "
           >
             <Input
               type="text"
@@ -129,12 +134,14 @@ function Login() {
               // maxLength={20}
               // minLength={1}
               required={true}
+              className={inputStyling(username)}
             />
             <Input
               type="text"
               placeholder="Your fullname (optional)"
               onChange={handleChange2}
               value={fullname}
+              className={inputStyling(fullname)}
             />
             <Button
               type="submit"
@@ -144,6 +151,9 @@ function Login() {
               {'Continue ->'}
             </Button>
           </form>
+        </div>
+        <div>
+          <img src={image1} alt="image1" className="h-80 w-80"></img>
         </div>
       </main>
     </div>
