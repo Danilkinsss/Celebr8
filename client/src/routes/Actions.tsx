@@ -64,8 +64,6 @@ function Actions() {
             >
               {'Create a party →'}
             </Button>
-            {/* </Link>
-            <Link to={'/join'}> */}
             <Button
               onClick={() => {
                 navigate('/join')
