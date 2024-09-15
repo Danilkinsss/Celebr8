@@ -49,7 +49,7 @@ function Actions() {
       <header>
         <Header withUserInfo={true} />
       </header>
-      <main className=" flex flex-col items-center justify-center h-96 gap-5">
+      <main className="flex flex-col items-center justify-center h-96 gap-5">
         <div className="bg-yellow-400 shadow-lg rounded-md flex flex-col w-[40%] max-w-lg py-10 px-5 gap-4 ">
           <Label className="font-semibold text-black text-4xl py-1 ">
             What is your plan for today?
