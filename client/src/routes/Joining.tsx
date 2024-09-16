@@ -89,21 +89,21 @@ function Join() {
   }
 
   return (
-    <div className=" bg-sky-700 bg-opacity-50 min-h-screen">
+    <div className="bg-sky-700 bg-opacity-50 min-h-screen">
       <header>
         <Header withUserInfo={true} />
       </header>
       {/* <div className="flex justify-end">
         <UserInfo />
       </div> */}
-      <main className=" flex flex-row justify-center py-10 h-96 gap-5">
+      <main className="flex flex-row justify-center py-10 h-96 gap-5">
         <div className="bg-yellow-400 items-center shadow-lg rounded-md flex flex-col py-10 px-5 gap-4 ">
           <h1 className="font-semibold text-slate-800 text-4xl py-1">
             Enter the party code here:
           </h1>
           <form
             onSubmit={handleSubmit}
-            className="text-cyan-700  flex flex-col gap-2 w-[80%] "
+            className="text-cyan-700 flex flex-col gap-2 w-[80%] "
           >
             <Input
               type="text"
@@ -116,7 +116,7 @@ function Join() {
               // onClick={() => {
               //   navigate('/party')
               // }}
-              className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
+              className="w-full my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
               onSubmit={handleSubmit}
             >
               {'Join a party'}
@@ -127,7 +127,7 @@ function Join() {
               onClick={() => {
                 navigate('/actions')
               }}
-              className="w-32 my-1 py-1 px-3  text-white rounded-md bg-green-800"
+              className="w-32 my-1 py-1 px-3 text-white rounded-md bg-green-800"
             >
               {'← Back'}
             </Button>
