@@ -65,7 +65,7 @@ function Actions() {
               // onClick={() => {
               //   navigate('/create')
               // }}
-              className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
+              className="w-full my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
             >
               {'Create a party'}
             </Button>
@@ -73,7 +73,7 @@ function Actions() {
               onClick={() => {
                 navigate('/join')
               }}
-              className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
+              className="w-full my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
             >
               {'Join a party'}
             </Button>
@@ -83,7 +83,7 @@ function Actions() {
               onClick={() => {
                 navigate('/')
               }}
-              className="w-32 my-1 py-1 px-3  text-white rounded-md bg-green-800"
+              className="w-32 my-1 py-1 px-3 text-white rounded-md bg-green-800"
             >
               {'← Back'}
             </Button>
