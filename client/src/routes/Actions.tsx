@@ -51,7 +51,7 @@ function Actions() {
       <header>
         <Header withUserInfo={true} />
       </header>
-      <main className="flex flex-row items-center justify-center h-96 gap-5">
+      <main className="flex flex-row items-center justify-center h-96 gap-10">
         <div>
           <img src={image1} alt="image1" className="h-80 w-80"></img>
         </div>
@@ -67,7 +67,7 @@ function Actions() {
               // }}
               className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
             >
-              {'Create a party →'}
+              {'Create a party'}
             </Button>
             <Button
               onClick={() => {
@@ -75,7 +75,7 @@ function Actions() {
               }}
               className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
             >
-              {'Join a party →'}
+              {'Join a party'}
             </Button>
           </form>
           <div>

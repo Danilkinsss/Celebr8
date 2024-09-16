@@ -148,7 +148,7 @@ function Login() {
               className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
               onClick={handleSubmit}
             >
-              {'Continue ->'}
+              {'Continue →'}
             </Button>
           </form>
         </div>

@@ -6,6 +6,8 @@ import { BaseSyntheticEvent, useContext, useState } from 'react'
 import { userContext } from '@/lib/userContext'
 // import UserInfo from '@/components/UserInfo'
 
+import image1 from '../assets/7212436 - Copy (4).jpg'
+
 function Join() {
   const navigate = useNavigate()
   const { user } = useContext(userContext)
@@ -82,24 +84,32 @@ function Join() {
     }
   }
 
+  function inputStyling(fullname: string) {
+    return fullname.length > 0 ? 'font-semibold' : 'font-thin'
+  }
+
   return (
-    <>
+    <div className=" bg-sky-700 bg-opacity-50 min-h-screen">
       <header>
         <Header withUserInfo={true} />
       </header>
       {/* <div className="flex justify-end">
         <UserInfo />
       </div> */}
-      <main className=" flex flex-col items-center justify-center h-96 gap-5">
-        <div className="bg-sky-700 bg-opacity-50 shadow-lg rounded-md flex flex-col w-[40%] py-10 px-5 gap-4 ">
+      <main className=" flex flex-row justify-center py-10 h-96 gap-5">
+        <div className="bg-yellow-400 items-center shadow-lg rounded-md flex flex-col py-10 px-5 gap-4 ">
           <h1 className="font-semibold text-slate-800 text-4xl py-1">
             Enter the party code here:
           </h1>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+          <form
+            onSubmit={handleSubmit}
+            className="text-cyan-700  flex flex-col gap-2 w-[80%] "
+          >
             <Input
               type="text"
               placeholder="Party code"
               onChange={handleChange}
+              className={inputStyling(partyid)}
               value={partyid}
             />
             <Button
@@ -109,20 +119,25 @@ function Join() {
               className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
               onSubmit={handleSubmit}
             >
-              {'Join the party →'}
+              {'Join a party'}
             </Button>
           </form>
+          <div>
+            <Button
+              onClick={() => {
+                navigate('/actions')
+              }}
+              className="w-32 my-1 py-1 px-3  text-white rounded-md bg-green-800"
+            >
+              {'← Back'}
+            </Button>
+          </div>
         </div>
-        <Button
-          onClick={() => {
-            navigate('/actions')
-          }}
-          className="w-[5%] my-1 py-1 px-3  text-white rounded-md bg-green-800"
-        >
-          {'← Back'}
-        </Button>
+        <div>
+          <img src={image1} alt="image1" className="h-80 w-80"></img>
+        </div>
       </main>
-    </>
+    </div>
   )
 }
 
