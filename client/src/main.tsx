@@ -21,6 +21,10 @@ const router = createBrowserRouter([
     children: [],
   },
   {
+    path: '/actions',
+    element: <Actions />,
+  },
+  {
     path: '/create/:partyid',
     element: <Create />,
   },
@@ -28,10 +32,7 @@ const router = createBrowserRouter([
     path: '/join',
     element: <Join />,
   },
-  {
-    path: '/actions',
-    element: <Actions />,
-  },
+
   {
     path: '/party/:partyid',
     element: <Party />,
