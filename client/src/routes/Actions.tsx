@@ -7,6 +7,8 @@ import { BaseSyntheticEvent } from 'react'
 import { userContext } from '@/lib/userContext'
 import { useContext } from 'react'
 
+import image1 from '../assets/7212436 - Copy (3).jpg'
+
 function Actions() {
   const navigate = useNavigate()
 
@@ -49,8 +51,11 @@ function Actions() {
       <header>
         <Header withUserInfo={true} />
       </header>
-      <main className="flex flex-col items-center justify-center h-96 gap-5">
-        <div className="bg-yellow-400 shadow-lg rounded-md flex flex-col w-[40%] max-w-lg py-10 px-5 gap-4 ">
+      <main className="flex flex-row items-center justify-center h-96 gap-5">
+        <div>
+          <img src={image1} alt="image1" className="h-80 w-80"></img>
+        </div>
+        <div className="justify-center items-center bg-yellow-400 shadow-lg rounded-md flex flex-col w-[40%] max-w-lg py-10 px-5 gap-4 ">
           <Label className="font-semibold text-black text-4xl py-1 ">
             What is your plan for today?
           </Label>
@@ -73,15 +78,17 @@ function Actions() {
               {'Join a party →'}
             </Button>
           </form>
+          <div>
+            <Button
+              onClick={() => {
+                navigate('/')
+              }}
+              className="w-32 my-1 py-1 px-3  text-white rounded-md bg-green-800"
+            >
+              {'← Back'}
+            </Button>
+          </div>
         </div>
-        <Button
-          onClick={() => {
-            navigate('/')
-          }}
-          className="w-[5%] my-1 py-1 px-3  text-white rounded-md bg-green-800"
-        >
-          {'← Back'}
-        </Button>
       </main>
     </div>
   )
