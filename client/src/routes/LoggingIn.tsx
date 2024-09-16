@@ -118,13 +118,13 @@ function Login() {
       <header>
         <Header withUserInfo={false} />
       </header>
-      <main className=" flex flex-row gap-10 items-center justify-center h-96">
-        <div className=" bg-yellow-400 shadow-xl rounded-md flex flex-col w-[40%] max-w-md p-8 py-10 gap-2">
-          <Label className="font-semibold  text-4xl">Hello there👋</Label>
+      <main className="flex flex-row gap-10 items-center justify-center h-96">
+        <div className="bg-yellow-400 shadow-xl rounded-md flex flex-col w-[40%] max-w-md p-8 py-10 gap-2">
+          <Label className="font-semibold text-4xl">Hello there👋</Label>
           <Label className="text-xl font-mono">Please Log In here:</Label>
           <form
             onSubmit={handleSubmit}
-            className=" text-cyan-700  flex flex-col gap-2 "
+            className="text-cyan-700 flex flex-col gap-2 "
           >
             <Input
               type="text"
@@ -145,7 +145,7 @@ function Login() {
             />
             <Button
               type="submit"
-              className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
+              className="w-full my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
               onClick={handleSubmit}
             >
               {'Continue →'}
