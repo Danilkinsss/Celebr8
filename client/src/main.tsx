@@ -13,6 +13,15 @@ import Join from './routes/Joining.tsx'
 import Party from './routes/Party.tsx'
 import { UserContextProvider } from './lib/userContext.tsx'
 
+/**
+ *
+ * Creating.tsx -> refactor texts(font, bold when data in there etc.)
+ * add alert when party changes are saved
+ * refactor table -> AddItem.tsx
+ * party page refactoring
+ *
+ */
+
 const router = createBrowserRouter([
   {
     path: '/',
