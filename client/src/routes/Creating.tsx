@@ -171,32 +171,36 @@ function Create() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className=" min-h-screen">
       <header>
         <Header withUserInfo={true} />
       </header>
       {/* <div className="flex justify-end px-[2%]">
         <UserInfo />
       </div> */}
-      <main className="h-[100%] flex flex-col items-center justify-center gap-5">
-        <div className="min-w-[45%] shadow-lg rounded-md flex flex-col w-fit py-8 px-7 gap-4">
-          <Label className="font-semibold text-4xl py-1">
-            Create a party📝
-          </Label>
-          <Label className="text-2xl">Main information</Label>
-          <div className="flex flex-col gap-2 ">
-            <Label>Party name</Label>
-            <Input
-              type="text"
-              onChange={(e) => handleChange(e, 'name')}
-              value={name}
-            />
-            <Label>Description</Label>
-            <Textarea
-              onChange={(e) => handleChange(e, 'description')}
-              value={description}
-              placeholder="Type some more information here."
-            />
+      <main className="bg-sky-700 bg-opacity-50 h-[100%] flex flex-col items-center justify-center gap-5 py-10">
+        <div className="bg-yellow-400 min-w-[45%] shadow-lg rounded-md flex flex-col w-fit py-8 px-7 gap-4">
+          <div className="flex flex-col gap-4">
+            <Label className="font-semibold text-4xl py-1">
+              Create a party📝
+            </Label>
+            <Label className="text-2xl">Main information</Label>
+            <div className="flex flex-col gap-2">
+              <Label>Party name</Label>
+              <Input
+                type="text"
+                onChange={(e) => handleChange(e, 'name')}
+                value={name}
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label>Description</Label>
+              <Textarea
+                onChange={(e) => handleChange(e, 'description')}
+                value={description}
+                placeholder="Type some more information here."
+              />
+            </div>
           </div>
           <Separator />
           <div className="  flex flex-row gap-2 justify-around">
@@ -220,28 +224,36 @@ function Create() {
               )}
             </div>
           </div>
-          <div className="flex flex-col gap-2  b-cyan-200">
+          <Separator />
+          <div className="flex flex-col gap-4">
             <Label className="text-2xl">Location and Time</Label>
-
-            <Label>Date</Label>
-            <Input
-              type="date"
-              onChange={(e) => handleChange(e, 'date')}
-              value={date}
-            />
-            <Label>Time</Label>
-            {/* <SelectScrollableTime /> */}
-            <Input
-              type="time"
-              onChange={(e) => handleChange(e, 'time')}
-              value={time}
-            />
-            <Label>Location</Label>
-            <Input
-              type="text"
-              onChange={(e) => handleChange(e, 'location')}
-              value={location}
-            />
+            <div className="flex flex-row gap-10">
+              <div className="flex flex-col gap-2">
+                <Label>Date</Label>
+                <Input
+                  type="date"
+                  onChange={(e) => handleChange(e, 'date')}
+                  value={date}
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <Label>Time</Label>
+                {/* <SelectScrollableTime /> */}
+                <Input
+                  type="time"
+                  onChange={(e) => handleChange(e, 'time')}
+                  value={time}
+                />
+              </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label>Location</Label>
+              <Input
+                type="text"
+                onChange={(e) => handleChange(e, 'location')}
+                value={location}
+              />
+            </div>
           </div>
           <div>
             <form onSubmit={handleSubmitSave}>
@@ -251,7 +263,7 @@ function Create() {
                 onSubmit={handleSubmitSave}
                 className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
               >
-                {'Save changes ✅'}
+                {'Save changes'}
               </Button>
             </form>
             <form onSubmit={handleSubmitAddAdmin}>
@@ -262,20 +274,20 @@ function Create() {
                 // }}
                 className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
               >
-                {'Go to party →'}
+                {'Go to party'}
               </Button>
             </form>
           </div>
-        </div>
-        <div className="min-w-72 w-[40%] flex flex-row gap-3 justify-center  py-2 px-4">
-          <Button
-            onClick={() => {
-              navigate('/actions')
-            }}
-            className="w-[15%] my-1 py-1 px-3  text-white rounded-md bg-green-800"
-          >
-            {'← Back'}
-          </Button>
+          <div className="self-center">
+            <Button
+              onClick={() => {
+                navigate('/actions')
+              }}
+              className="w-32 my-1 py-1 px-3  text-white rounded-md bg-green-800"
+            >
+              {'← Back'}
+            </Button>
+          </div>
         </div>
       </main>
     </div>
