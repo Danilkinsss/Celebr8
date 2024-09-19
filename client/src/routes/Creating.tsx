@@ -170,8 +170,9 @@ function Create() {
     }
   }
 
-  // function inputStyling(fullname: string) {
-  //   return fullname.length > 0 ? 'font-semibold' : 'font-thin'
+  // function inputStyling(word: string | undefined) {
+  //   if (word == undefined) return 'font-thin'
+  //   return word.length > 0 ? 'font-semibold' : 'font-thin'
   // }
 
   return (
@@ -183,7 +184,7 @@ function Create() {
         <UserInfo />
       </div> */}
       <main className="bg-sky-700 bg-opacity-50 h-[100%] flex flex-col items-center justify-center gap-5 py-10">
-        <div className="bg-yellow-400 min-w-[45%] shadow-lg rounded-md flex flex-col w-fit py-8 px-7 gap-4">
+        <div className="bg-yellow-400 min-w-[50%] py-8 px-7 gap-4 shadow-lg rounded-md flex flex-col w-fit ">
           <div className="flex flex-col gap-4">
             <Label className="font-semibold text-4xl py-1">
               Create a party📝
@@ -195,9 +196,10 @@ function Create() {
                 type="text"
                 onChange={(e) => handleChange(e, 'name')}
                 value={name}
+                className="font-semibold text-cyan-800"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 font-normal">
               <Label>Description</Label>
               <Textarea
                 onChange={(e) => handleChange(e, 'description')}
@@ -216,7 +218,7 @@ function Create() {
               {params.partyid && party && (
                 <div className="flex flex-col gap-4">
                   <Label className="text-2xl">List of Items</Label>
-                  <div className="w-fit border rounded-md p-3">
+                  <div className="bg-slate-200 w-fit border rounded-md p-3">
                     <TableOfItems
                       foodArr={party.food}
                       partyId={params.partyid}

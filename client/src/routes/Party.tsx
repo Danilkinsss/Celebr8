@@ -10,9 +10,6 @@ import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
 // import UserInfo from '@/components/UserInfo'
 
-// TODO: create an admin to be the 1st person on party
-// TODO: join as a guest -> you will be on the list
-
 function customToDateString(dateStr: string): string {
   // Parse the input date string
   const [year, month, day] = dateStr.split('-').map(Number)
@@ -89,7 +86,7 @@ function Party() {
 
   const copyToClipBoard = async (copyMe: string) => {
     await navigator.clipboard.writeText(copyMe)
-    alert("Success: You copied party's link")
+    alert("You copied party's link✅")
   }
 
   return (
@@ -100,11 +97,11 @@ function Party() {
       {/* <div className="flex justify-end">
         <UserInfo />
       </div> */}
-      <main className=" min-h-screen flex flex-col items-center justify-start gap-2">
+      <main className="bg-sky-700 bg-opacity-50 py-8 min-h-screen flex flex-col items-center justify-start gap-2">
         {party && (
-          <div className=" shadow-lg rounded-md flex flex-col w-[60%] py-12 px-5 gap-4">
-            <Label className="font-semibold text-4xl py-1">Your party🎊</Label>
-            <div className="flex flex-row items-center justify-between ">
+          <div className="bg-yellow-400 min-w-[50%] shadow-lg rounded-md flex flex-col w-[60%] py-8 px-12 gap-4">
+            {/* <Label className="font-semibold text-4xl py-1">Your party🎊</Label> */}
+            <div className="flex flex-row items-center justify-between">
               <Label className="text-cyan-950 font-extrabold text-3xl py-1">
                 {party.name}
               </Label>
@@ -115,12 +112,12 @@ function Party() {
                   copyToClipBoard(params.partyid ? params.partyid : '')
                 }
                 variant="outline"
-                className="text-lg  font-normal py-1 cursor-pointer hover:underline hover:font-semibold"
+                className="min-w-fit w-[50%] px-12 text-lg border-white border-2 font-normal py-1 cursor-pointer hover:underline hover:font-semibold"
               >
                 {params.partyid}
               </Badge>
             </div>
-            <div className=" flex flex-row shadow-md rounded-md gap-x-10 py-2">
+            <div className="bg-slate-200 flex flex-row shadow-md rounded-md gap-x-10 py-2">
               <div className="min-w-[20%] w-fit p-3 flex flex-col gap-2">
                 <Label className=" text-xl">Date and Time</Label>
                 <div className="flex flex-col">
@@ -146,9 +143,9 @@ function Party() {
               </div>
             </div>
             <Separator />
-            <div className="flex flex-row justify-between">
-              <div className="shadow-lg rounded-md min-w-[40%] flex flex-col">
-                <div className="flex flex-row justify-between items-center p-3 ">
+            <div className=" flex flex-row justify-between">
+              <div className="bg-slate-200 shadow-lg rounded-md min-w-[40%] flex flex-col">
+                <div className=" flex flex-row justify-between items-center p-3 ">
                   <Label className=" text-xl">Attendees</Label>
                   <Label className=" text-sl font-thin text-slate-500">
                     ({party.members.length}{' '}
@@ -160,7 +157,7 @@ function Party() {
                   adminId={party.adminId}
                 />
               </div>
-              <div className=" shadow-lg rounded-md min-w-[55%] flex flex-col">
+              <div className="bg-slate-200 shadow-lg rounded-md min-w-[55%] flex flex-col">
                 <Label className="text-xl p-3">Items</Label>
                 <TableOfItems
                   foodArr={party.food}
@@ -170,24 +167,26 @@ function Party() {
                 />
               </div>
             </div>
+            <div className="flex flex-col items-center justify-items-center">
+              <Button
+                onClick={() => {
+                  navigate(-1)
+                }}
+                className="min-w-fit w-32 my-1 py-1 px-3  text-white rounded-md bg-green-800"
+              >
+                {'← Back'}
+              </Button>
+              <Button
+                onClick={() => {
+                  navigate('/')
+                }}
+                className="min-w-fit w-32 my-1 py-1 px-3  text-white rounded-md bg-slate-600"
+              >
+                {'Go to start'}
+              </Button>
+            </div>
           </div>
         )}
-        <Button
-          onClick={() => {
-            navigate(-1)
-          }}
-          className="w-[5%] my-1 py-1 px-3  text-white rounded-md bg-green-800"
-        >
-          {'← Back'}
-        </Button>
-        <Button
-          onClick={() => {
-            navigate('/')
-          }}
-          className="min-w-fit w-[10%] my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
-        >
-          {'← Go to start'}
-        </Button>
       </main>
     </div>
   )

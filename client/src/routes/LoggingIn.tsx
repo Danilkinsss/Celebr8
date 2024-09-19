@@ -109,8 +109,8 @@ function Login() {
     setText('')
   }
   */
-  function inputStyling(fullname: string) {
-    return fullname.length > 0 ? 'font-semibold' : 'font-thin'
+  function inputStyling(word: string) {
+    return word.length > 0 ? 'font-semibold' : 'font-thin'
   }
 
   return (
