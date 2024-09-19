@@ -11,7 +11,7 @@ function UserInfo() {
     navigate('/')
   }
   return (
-    <div className="flex flex-col  w-fit border items-center rounded-lg gap-1 p-2">
+    <div className="flex flex-row w-fit border items-center rounded-lg gap-2 p-3">
       <Label className="text-md">Username:</Label>
       <Badge className="bg-blue-100 text-md" variant="secondary">
         {user?.username}
