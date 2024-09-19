@@ -170,6 +170,10 @@ function Create() {
     }
   }
 
+  // function inputStyling(fullname: string) {
+  //   return fullname.length > 0 ? 'font-semibold' : 'font-thin'
+  // }
+
   return (
     <div className=" min-h-screen">
       <header>

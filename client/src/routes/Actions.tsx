@@ -55,17 +55,17 @@ function Actions() {
         <div>
           <img src={image1} alt="image1" className="h-80 w-80"></img>
         </div>
-        <div className="justify-center items-center bg-yellow-400 shadow-lg rounded-md flex flex-col w-[40%] max-w-lg py-10 px-5 gap-4 ">
+        <div className="w-full justify-center items-center bg-yellow-400 shadow-lg rounded-md flex flex-col max-w-lg py-10 px-5 gap-4 ">
           <Label className="font-semibold text-black text-4xl py-1 ">
             What is your plan for today?
           </Label>
-          <form onSubmit={handleSubmitCreate}>
+          <form onSubmit={handleSubmitCreate} className="flex flex-col">
             <Button
               type="submit"
               // onClick={() => {
               //   navigate('/create')
               // }}
-              className="w-full my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
+              className="w-96 my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
             >
               {'Create a party'}
             </Button>
@@ -73,7 +73,7 @@ function Actions() {
               onClick={() => {
                 navigate('/join')
               }}
-              className="w-full my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
+              className="w-96 my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
             >
               {'Join a party'}
             </Button>
