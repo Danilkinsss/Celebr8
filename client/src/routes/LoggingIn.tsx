@@ -32,15 +32,10 @@ function Login() {
   // const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
   //   setUsername(e.currentTarget.value)
   // }
-  const handleChange = (event: BaseSyntheticEvent) => {
-    setUsername(event.currentTarget.value)
-    // console.log('username:', username)
-    // console.log('event.currentTarget.value:', event.currentTarget.value)
-  }
-  const handleChange2 = (event: BaseSyntheticEvent) => {
-    setFullname(event.currentTarget.value)
-    // console.log('username:', fullname)
-    // console.log('event.currentTarget.value:', event.currentTarget.value)
+  const handleChange = (event: BaseSyntheticEvent, isUsername: boolean) => {
+    isUsername
+      ? setUsername(event.currentTarget.value)
+      : setFullname(event.currentTarget.value)
   }
 
   const navigate = useNavigate()
@@ -49,7 +44,7 @@ function Login() {
     event.preventDefault()
     let data2: object
     if (fullname == '') {
-      console.log('wow')
+      console.log('fullname is null')
       data2 = {
         username: username,
       }
@@ -79,13 +74,6 @@ function Login() {
     setUsername('')
     setFullname('')
     navigate('/actions')
-
-    /*
-    const form = event.currentTarget
-    console.log(form)
-    localStorage.setItem('username', username)
-    setUsername(username)
-    */
   }
 
   /*
@@ -129,7 +117,7 @@ function Login() {
             <Input
               type="text"
               placeholder="Your nickname"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e, true)}
               value={username}
               // maxLength={20}
               // minLength={1}
@@ -139,7 +127,7 @@ function Login() {
             <Input
               type="text"
               placeholder="Your fullname (optional)"
-              onChange={handleChange2}
+              onChange={(e) => handleChange(e, false)}
               value={fullname}
               className={inputStyling(fullname)}
             />

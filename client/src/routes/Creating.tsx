@@ -22,8 +22,7 @@ function Create() {
   }
 
   const params = useParams()
-  //:partyid
-  console.log('party params:', params.partyid)
+  console.log('start party params:', params.partyid)
 
   const BASE_URL = 'http://localhost:8080'
   const [party, setParty] = useState<Partytype>()
@@ -39,7 +38,8 @@ function Create() {
         .then((res) => res.json())
         .then((data) => {
           setParty(data.party),
-            setName(data.party.name),
+            setName(data.party.name || ''),
+            // TODO:      continue resolving fetching problem
             setLocation(data.party.location),
             setDate(data.party.date),
             setTime(data.party.time),
@@ -114,10 +114,59 @@ function Create() {
   }
 
   //:partyid
-  console.log('party params:', params.partyid)
+  console.log('end party params:', params.partyid)
 
-  const handleSubmitSave = async (event: BaseSyntheticEvent) => {
+  // const handleSubmitSave = async (event: BaseSyntheticEvent) => {
+  //   event.preventDefault()
+
+  //   const res = await fetch(`${BASE_URL}/parties/${params.partyid}`, {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       name: name,
+  //       // adminId: 'none',
+  //       description,
+  //       date,
+  //       time,
+  //       location,
+  //     }),
+  //   })
+
+  //   if (res.status === 204) {
+  //     const ressss = await res.json()
+  //     console.log('ressss', ressss.party.id)
+
+  //     console.log('updated')
+  //   } else {
+  //     console.log('smth is wrong')
+  //     return console.log(res.statusText)
+  //   }
+  // }
+  // /parties/:id
+
+  const handleSubmitAddAdmin = async (event: BaseSyntheticEvent) => {
     event.preventDefault()
+
+    const res2 = await fetch(`${BASE_URL}/users/${user?.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: user?.username,
+        fullname: user?.fullname,
+        partyId: params.partyid,
+      }),
+    })
+
+    if (res2.status === 204) {
+      console.log('fetched')
+      console.log('res2\n\n\n\n', res2)
+    } else {
+      return console.log('somthing else', res2.statusText)
+    }
 
     const res = await fetch(`${BASE_URL}/parties/${params.partyid}`, {
       method: 'PUT',
@@ -133,40 +182,19 @@ function Create() {
         location,
       }),
     })
-    // 4b516f1b-6a00-4af2-8c40-7d39a3634a73
 
     if (res.status === 204) {
       const ressss = await res.json()
       console.log('ressss', ressss.party.id)
-
       console.log('updated')
     } else {
       console.log('smth is wrong')
       return console.log(res.statusText)
     }
-  }
-  // /parties/:id
 
-  const handleSubmitAddAdmin = async (event: BaseSyntheticEvent) => {
-    event.preventDefault()
-    const res2 = await fetch(`${BASE_URL}/users/${user?.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: user?.username,
-        fullname: user?.fullname,
-        partyId: params.partyid,
-      }),
-    })
-
-    if (res2.status === 204) {
-      console.log('fetched')
-      console.log('res2', res2)
+    if (res.status === 204 && res2.status === 204) {
+      console.log('Success!')
       navigate(`/party/${params.partyid}`)
-    } else {
-      return console.log(res2.statusText)
     }
   }
 
@@ -180,9 +208,6 @@ function Create() {
       <header>
         <Header withUserInfo={true} />
       </header>
-      {/* <div className="flex justify-end px-[2%]">
-        <UserInfo />
-      </div> */}
       <main className="bg-sky-700 bg-opacity-50 h-[100%] flex flex-col items-center justify-center gap-5 py-10">
         <div className="bg-yellow-400 min-w-[50%] py-8 px-7 gap-4 shadow-lg rounded-md flex flex-col w-fit ">
           <div className="flex flex-col gap-4">
@@ -210,7 +235,7 @@ function Create() {
           </div>
           <Separator />
           <div className="  flex flex-row gap-2 justify-around">
-            <div className="min-w-[20%] w-fit flex flex-col gap-4">
+            <div className="bg-pink-400 min-w-[20%] w-fit flex flex-col gap-4">
               <Label className="text-2xl">Create item</Label>
               {params.partyid && <AddItem partyId={params.partyid} />}
             </div>
@@ -223,7 +248,7 @@ function Create() {
                       foodArr={party.food}
                       partyId={params.partyid}
                       withDelete={true}
-                      peopleNumber={party.members.length}
+                      peopleNumber={1}
                     />
                   </div>
                 </div>
@@ -244,7 +269,6 @@ function Create() {
               </div>
               <div className="flex flex-col gap-2">
                 <Label>Time</Label>
-                {/* <SelectScrollableTime /> */}
                 <Input
                   type="time"
                   onChange={(e) => handleChange(e, 'time')}
@@ -262,16 +286,15 @@ function Create() {
             </div>
           </div>
           <div>
-            <form onSubmit={handleSubmitSave}>
+            {/* <form onSubmit={handleSubmitSave}>
               <Button
-                // onClick={}
                 type="submit"
                 onSubmit={handleSubmitSave}
                 className="w-full my-1 py-1 px-3  text-white rounded-md bg-cyan-800"
               >
                 {'Save changes'}
               </Button>
-            </form>
+            </form> */}
             <form onSubmit={handleSubmitAddAdmin}>
               <Button
                 type="submit"

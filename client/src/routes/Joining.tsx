@@ -14,7 +14,7 @@ function Join() {
   if (!user) {
     navigate('/')
   }
-  console.log(user?.id)
+  console.log('user id joining', user?.id)
 
   const [partyid, setPartyid] = useState('')
   const BASE_URL = 'http://localhost:8080'
