@@ -16,6 +16,7 @@ function Actions() {
 
   const handleSubmitCreate = async (event: BaseSyntheticEvent) => {
     event.preventDefault()
+    console.log('in handleSubmitCreate...')
 
     const res = await fetch(`${BASE_URL}/parties`, {
       method: 'POST',
@@ -24,16 +25,15 @@ function Actions() {
       },
       body: JSON.stringify({
         adminId: user?.id,
-        name: '*Default Party Name*',
+        name: "Party's Name",
       }),
     })
-    // 4b516f1b-6a00-4af2-8c40-7d39a3634a73
 
     if (res.status === 201) {
       const ressss = await res.json()
-      console.log('ressss', ressss.party.id)
+      console.log('ressss party id', ressss.party.id)
 
-      console.log('fetched')
+      console.log('fetched party')
       navigate(`/create/${ressss.party.id}`)
     } else {
       console.log('smth is wrong')
@@ -45,6 +45,7 @@ function Actions() {
   if (!user) {
     navigate('/')
   }
+
   console.log(user?.username)
   return (
     <div className="bg-sky-700 bg-opacity-50 min-h-screen">
@@ -62,9 +63,6 @@ function Actions() {
           <form onSubmit={handleSubmitCreate} className="flex flex-col">
             <Button
               type="submit"
-              // onClick={() => {
-              //   navigate('/create')
-              // }}
               className="w-96 my-1 py-1 px-3 text-white rounded-md bg-cyan-800"
             >
               {'Create a party'}
