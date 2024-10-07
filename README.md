@@ -1,7 +1,7 @@
 
 Hello there! This is the latest version of an event management app called Celebr8.
 
-_“Leave planning to us, have fun(don’t get too drunk)”_
+_“Leave planning to us, have fun(please, don’t get too drunk)”_
 
 Managing parties is hard (you either know that or have to believe me).
 
