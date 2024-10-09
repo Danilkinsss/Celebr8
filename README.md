@@ -19,4 +19,4 @@ And just one link to join
 
 You can try the app yourself if you want.
 
-(Instructions for installation and deployment are coming soon...)
+(Instructions for installation and deployment are coming soon... I guess)
