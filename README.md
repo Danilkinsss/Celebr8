@@ -21,6 +21,6 @@ Isn't it just wonderful?😻
 
 **_YES Please!_**
 
-You can try the app yourself if you want.
+You can try the app yourself.
 
 (Instructions for installation and deployment are coming soon... I guess)
