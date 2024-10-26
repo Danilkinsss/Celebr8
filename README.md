@@ -10,7 +10,7 @@ Managing parties is hard (you either know that or have to believe me).
 **Before:**
 Create a chat, send a message with event information, and then try editing things. After that, invite people, tag people, calculate all the costs yourself, and many more actions to do.
 
-You don’t want all of that in your life!
+And you don’t want all of that in your life!
 
 **Now:**
 
