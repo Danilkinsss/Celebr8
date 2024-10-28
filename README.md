@@ -23,4 +23,4 @@ Isn't it just wonderful?😻
 
 You can try the app yourself.
 
-(Instructions for installation and deployment are coming soon... I guess)
+(Instructions for installation and deployment are coming soon...)
