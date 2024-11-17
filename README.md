@@ -1,5 +1,5 @@
 
-Hello there! This is the latest version of an event management app called **Celebr8** (CelebrAte - got it?)
+Hello there! This is the latest version of an event management app called **Celebr8** (CelebrEight/Celebrate - got it?)
 
 _“Leave planning to us, have fun(please, don’t get too drunk)”_
 
