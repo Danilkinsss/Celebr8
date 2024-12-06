@@ -17,7 +17,7 @@ And you don’t want all of that in your life!
 A couple of clicks to create a party,
 And just one link to join
 
-Isn't it just wonderful?😻
+Isn't it just wonderful?😻😻😻
 
 
 
