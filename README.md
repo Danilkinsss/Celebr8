@@ -25,4 +25,4 @@ _You can try the app yourself._
 
 (Instructions for installation and deployment are coming soon...)
 
-new text added
+new text added 2
