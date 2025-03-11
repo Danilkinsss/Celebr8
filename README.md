@@ -12,6 +12,7 @@ Create a chat, send a message with event information, try editing things, invite
 
 And you don’t want all of that in your life!
 
+
 **Now:**
 
 A couple of clicks to create a party,
