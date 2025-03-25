@@ -26,5 +26,5 @@ _You can try the app yourself._
 
 (Instructions for installation and deployment are coming soon...)
 
-new change added again
+new change added again today
 
